@@ -1,0 +1,33 @@
+
+Assignment 11
+__________________
+
+-> WRITE README
+
+-> check junit in code:
+compare to ass. 10 (pom.xlm, ...Testklasse, Version, ... and what Pete wrote) 
+
+-> maybe repeat "implements Serializable" and serialVersionUID
+
+-> class transaction, variable amount, type, description? 
+in seiner Liste: Funds In? Fund Out?
+
+Code:
+-----
+
+given code: populates a list of transactions
+
+1) create two webpages with URL
+A) http://localhost:8080/transactions
+B) http://localhost:8080/transactions/{transactionId}
+The first page will be used to view all 100 transactions that are stored in your repository.
+In ascending order
+ID is clickable, links navigates to ID
+
+(A) 
+Methode public String getAll() {... return "transactions"}
+clickable IDs
+sort by date in ascending order (in service package)
+(B) 
+-> have a look at lesson code
+dynamic
