@@ -21,7 +21,8 @@ public class TransactionController {
 	
 	@GetMapping("/transactions")
 	public String getTransactions (ModelMap model) {
-		List<Transaction> history = transRepo.findAll();
+		List<Transaction> history = transactionService.sortByDate(transRepo).findAll();
+	//	history = transactionService.sortByDate(transRepo);
 		System.out.println(history);
 		Transaction transaction = new Transaction();
 		model.put("transaction", transaction);
