@@ -25,6 +25,7 @@ public class TransactionRepository {
 
 	@SuppressWarnings("unchecked")
 	private void populateData() {
+		System.out.println("data loaded");
 		try (FileInputStream fileInputStream = new FileInputStream("transactions.txt");
 			 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
 			this.transactions = (List<Transaction>) objectInputStream.readObject();
@@ -32,5 +33,9 @@ public class TransactionRepository {
 			e.printStackTrace();
 		} 
 		
+	}
+
+	public Transaction findById(Long transactionId) {
+		return transactions.get(transactionId.intValue());
 	}
 }
