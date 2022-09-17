@@ -29,6 +29,7 @@ public class TransactionRepository {
 		try (FileInputStream fileInputStream = new FileInputStream("transactions.txt");
 			 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
 			this.transactions = (List<Transaction>) objectInputStream.readObject();
+			System.out.println("data loaded II "+ transactions + transactions.toString());
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} 

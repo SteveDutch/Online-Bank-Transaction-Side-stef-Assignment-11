@@ -22,7 +22,7 @@ public class TransactionService {
 	
 	public TransactionRepository sortByDate (TransactionRepository transRepo) {
 		transRepo.findAll().sort(Comparator.comparing(Transaction::getDate));
-		System.out.println(transRepo.toString());
+		System.out.println(transRepo.toString() + "from tansSe.rortbyDate");
 		return transRepo;
 //		return transactions.stream()
 //			      .sorted()
