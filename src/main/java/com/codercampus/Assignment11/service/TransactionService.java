@@ -1,8 +1,6 @@
 package com.codercampus.Assignment11.service;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +22,7 @@ public class TransactionService {
 		transRepo.findAll().sort(Comparator.comparing(Transaction::getDate));
 		System.out.println(transRepo.toString() + "from tansSe.rortbyDate");
 		return transRepo;
-//		return transactions.stream()
-//			      .sorted()
-//			      .collect(Collectors.toList());
-	}
 
+	}
 
 }

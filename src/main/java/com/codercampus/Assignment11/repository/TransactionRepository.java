@@ -26,10 +26,11 @@ public class TransactionRepository {
 	@SuppressWarnings("unchecked")
 	private void populateData() {
 		System.out.println("data loaded");
+		// TODO *.txt in application file
 		try (FileInputStream fileInputStream = new FileInputStream("transactions.txt");
 			 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
 			this.transactions = (List<Transaction>) objectInputStream.readObject();
-			System.out.println("data loaded II "+ transactions + transactions.toString());
+			System.out.println("data loaded II "+ transactions );
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} 
