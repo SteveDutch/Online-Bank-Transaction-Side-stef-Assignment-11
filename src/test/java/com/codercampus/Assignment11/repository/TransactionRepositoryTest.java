@@ -15,9 +15,10 @@ class TransactionRepositoryTest {
 		
 		TransactionRepository sut = new TransactionRepository();
 		List<Transaction> testList = sut.findAll();
-		boolean exspectedResult = false;
-		if (testList != null) {
-			exspectedResult = true;}
+		boolean exspectedResult;
+		if (testList.isEmpty()) {
+			exspectedResult = false;} 
+		else {exspectedResult = true;}
 		assertEquals(true, exspectedResult);
 		}
 
