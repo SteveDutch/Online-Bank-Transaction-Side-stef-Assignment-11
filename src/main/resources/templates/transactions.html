@@ -16,7 +16,7 @@
 			<th>Funds Out</th>
 		</tr>
 		<tr th:each="storedTrans: ${history}">
-			<td><span th:inline="text"><a th:href="@{/transactions/{transactionId}(transactionId=${storedTrans.id})}" target="_blank" rel="noopener noreferrer"> [[${storedTrans.id}]] </a></span></td>
+			<td><span th:inline="text"><a th:href="@{/transactions/{transactionId}(transactionId=${storedTrans.id}-1)}" target="_blank" rel="noopener noreferrer"> [[${storedTrans.id}]] </a></span></td>
 			<td><span th:inline="text"> [[${storedTrans.date}]] </span></td>
 			<td><span th:inline="text"> [[${storedTrans.retailer}]] </span></td>
 			

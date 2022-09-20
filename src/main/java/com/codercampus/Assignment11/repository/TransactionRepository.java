@@ -13,34 +13,33 @@ import com.codercampus.Assignment11.domain.Transaction;
 @Repository
 public class TransactionRepository {
 	private List<Transaction> transactions = new ArrayList<>(100);
-	
-	public TransactionRepository () {
+
+	public TransactionRepository() {
 		super();
 		populateData();
 	}
-	
-	public List<Transaction> findAll () {
+
+	public List<Transaction> findAll() {
 		return transactions;
 	}
 
 	@SuppressWarnings("unchecked")
 	private void populateData() {
-		System.out.println("data loaded");
-		// TODO *.txt in application file
+
+		// TODO transactions.txt in application file & clear why it's not working with
+		// @value annotation?
 		try (FileInputStream fileInputStream = new FileInputStream("transactions.txt");
-			 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
+				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
 			this.transactions = (List<Transaction>) objectInputStream.readObject();
-			System.out.println("data loaded II "+ transactions );
+
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
-		} 
-		
+		}
+
 	}
 
 	public Transaction findById(Long transactionId) {
 		return transactions.get(transactionId.intValue());
 	}
-	
-	
-	
+
 }
