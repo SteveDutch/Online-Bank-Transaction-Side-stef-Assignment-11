@@ -14,7 +14,7 @@ import com.codercampus.Assignment11.domain.Transaction;
 @Repository
 public class TransactionRepository {
 	private List<Transaction> transactions = new ArrayList<>(100);
-	@Value("${spring.thymeleaf.cache}")
+	@Value("${file.name}")
 	private String fileName;
 	
 	
